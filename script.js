@@ -27,5 +27,75 @@ function operate(operator, num1, num2) {
       return divide(num1, num2);
   }
 }
+let operator = "";
+let operation = false;
+let isOperating = false;
+const display = document.querySelector(".display");
+const numButtons = document.querySelectorAll(".number");
+const operators = document.querySelectorAll(".operator");
+const equal = document.querySelector("#equal");
+const plus = document.querySelector("#plus");
+const minus = document.querySelector("#minus");
+const multiplier = document.querySelector("#multiply");
+const divider = document.querySelector("#divide");
 
-console.log(operate("/", 1, 0));
+plus.addEventListener("click", () => {
+  if (isOperating) equality();
+  operator = "+";
+  operation = true;
+  isOperating = true;
+  num1 = display.textContent;
+  console.log(num1);
+});
+
+minus.addEventListener("click", () => {
+  if (isOperating) equality();
+  operator = "-";
+  operation = true;
+  isOperating = true;
+  num1 = display.textContent;
+  console.log(num1);
+});
+
+multiplier.addEventListener("click", () => {
+  if (isOperating) equality();
+  operator = "*";
+  operation = true;
+  isOperating = true;
+  num1 = display.textContent;
+  console.log(num1);
+});
+
+divider.addEventListener("click", () => {
+  if (isOperating) equality();
+  operator = "/";
+  operation = true;
+  isOperating = true;
+  num1 = display.textContent;
+  console.log(num1);
+});
+
+numButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    if (operation) {
+      display.textContent = "";
+      operation = false;
+    }
+    display.textContent += e.target.textContent;
+  });
+});
+
+equal.addEventListener("click", () => {
+  equality();
+  operator = "";
+});
+
+function equality() {
+  num2 = display.textContent;
+  console.log(num1);
+  console.log(num2);
+  console.log(operator);
+  display.textContent = operate(operator, +num1, +num2);
+  operation = true;
+  isOperating = false;
+}
