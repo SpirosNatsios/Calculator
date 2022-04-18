@@ -11,7 +11,7 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
-  if (num2 != 0) return num1 / num2;
+  if (num2 != 0) return (num1 / num2).toFixed(3);
   return;
 }
 
@@ -28,7 +28,7 @@ function operate(operator, num1, num2) {
   }
 }
 let operator = "";
-let operation = false;
+let operation = true;
 let isOperating = false;
 const display = document.querySelector(".display");
 const numButtons = document.querySelectorAll(".number");
@@ -38,6 +38,7 @@ const plus = document.querySelector("#plus");
 const minus = document.querySelector("#minus");
 const multiplier = document.querySelector("#multiply");
 const divider = document.querySelector("#divide");
+const clear = document.querySelector("#clear");
 
 plus.addEventListener("click", () => {
   if (isOperating) equality();
@@ -99,3 +100,10 @@ function equality() {
   operation = true;
   isOperating = false;
 }
+
+clear.addEventListener("click", () => {
+  display.textContent = "0";
+  operator = "";
+  operation = true;
+  isOperating = false;
+});
