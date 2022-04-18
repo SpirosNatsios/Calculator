@@ -27,5 +27,37 @@ function operate(operator, num1, num2) {
       return divide(num1, num2);
   }
 }
+let operator = "";
+const display = document.querySelector(".display");
+const numButtons = document.querySelectorAll(".number");
+const operators = document.querySelectorAll(".operator");
 
-console.log(operate("/", 1, 0));
+const plus = document.querySelector("#plus");
+
+numButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    content = e.target.textContent;
+    display.textContent += content;
+  });
+});
+
+equal.addEventListener("click", () => {
+  num2 = display.textContent;
+  display.textContent = operate(operator, +num1, +num2);
+});
+
+operators.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    num1 = display.textContent;
+    display.textContent = "";
+    operator = e.target.textContent;
+    console.log(operator);
+  });
+});
+
+// plus.addEventListener("click", () => {
+//   num1 = display.textContent;
+//   display.textContent = "";
+//   operator = plus.textContent;
+//   console.log(operator);
+// });
