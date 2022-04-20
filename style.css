@@ -3,31 +3,39 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Lilita One";
-  font-size: smaller;
+}
+body {
+  background-image: linear-gradient(135deg, #faf279, #ffc40d);
+  height: 100vh;
+  overflow: hidden;
 }
 .main-container {
   width: 450px;
   height: 700px;
-  margin: 150px auto;
-  background-color: teal;
+  margin: 100px auto;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
+  border: 2px solid #008084;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2),
+    0 15px 30px 0 rgba(0, 0, 0, 0.19);
 }
 
 .display {
   width: 450px;
   height: 150px;
-  background-color: gray;
+  background-color: #008086;
   margin-bottom: 30px;
-  font-size: 80px;
+  font-size: 75px;
   display: flex;
   align-items: center;
   padding-right: 20px;
   justify-content: end;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  color: #ffffff;
 }
 
 .buttons {
@@ -47,28 +55,37 @@
 }
 
 .bottom-buttons {
-  width: 450px;
-  height: 115px;
+  width: 440px;
+  height: 100px;
   display: flex;
+  margin-top: 25px;
   align-items: center;
   justify-content: space-around;
-  background-color: teal;
+  background-color: #ffffff;
+}
+
+.operator {
+  background-color: #0ba4b3;
+  color: #ffffff;
 }
 .bottom-buttons button {
   width: 150px;
+  height: 65px;
+  font-size: 30px;
+  border-radius: 100px;
+  border: none;
 }
 
 button {
-  color: #fff;
-  background-color: #04aa6d;
-  box-shadow: 0 3px #999;
+  background-color: #ecf0f1;
+  box-shadow: 0 3px darkgray;
+  color: #282726;
 }
 button:hover {
-  background-color: #3e8e41;
+  background-color: #9acdff;
 }
 
 button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 2px #666;
+  box-shadow: 0 1px #666;
   transform: translateY(4px);
 }

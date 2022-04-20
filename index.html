@@ -9,13 +9,17 @@
       href="https://fonts.googleapis.com/css?family=Lilita+One"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <title>Calculator</title>
   </head>
   <body>
     <div class="main-container">
       <div class="display">0</div>
       <div class="buttons">
-        <button class="number">7</button>
+        <button class="number" data-key="55">7</button>
         <button class="number">8</button>
         <button class="number">9</button>
         <button class="button operator" id="plus">+</button>
@@ -28,13 +32,13 @@
         <button class="number">3</button>
         <button class="button operator" id="multiply">*</button>
         <button class="number">0</button>
-        <button class="number" id="dot">.</button>
-        <button class="button" id="backspase">pis</button>
+        <button class="button" id="dot">.</button>
+        <button class="button" id="equal">=</button>
         <button class="button operator" id="divide">/</button>
-        <div class="bottom-buttons">
-          <button class="button" id="clear">C</button>
-          <button class="button" id="equal">=</button>
-        </div>
+      </div>
+      <div class="bottom-buttons">
+        <button class="button operator" id="clear">C</button>
+        <button class="button operator" id="backspase">&#xe14a;</button>
       </div>
     </div>
     <script src="script.js"></script>

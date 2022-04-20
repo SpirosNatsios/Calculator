@@ -1,5 +1,5 @@
 let num1 = undefined;
-let operator = "s";
+let operator = "";
 let operation = true;
 let isOperating = false;
 const display = document.querySelector(".display");
@@ -43,10 +43,20 @@ equal.addEventListener("click", () => {
 
 function equality() {
   num2 = display.textContent;
+  console.log(num1);
+  console.log(num2);
+  console.log(operator);
+
   display.textContent = operate(operator, +num1, +num2);
+  if (display.textContent.length >= 10) {
+    display.textContent = "Error";
+    console.log("test");
+  }
   operation = true;
   isOperating = false;
   num1 = undefined;
+
+  if (display.textContent == "") display.textContent = "Error";
 }
 
 clear.addEventListener("click", clearScreen);
@@ -68,6 +78,19 @@ backSpace.addEventListener("click", () => {
   }
 });
 
+dot.addEventListener("click", () => {
+  if (operation) {
+    display.textContent = "0";
+    operation = false;
+    display.textContent += ".";
+    return;
+  }
+  if (display.textContent.includes(".") || display.textContent.length >= 10)
+    return;
+  operation = false;
+  display.textContent += ".";
+});
+
 function add(num1, num2) {
   return num1 + num2;
 }
@@ -77,11 +100,13 @@ function substract(num1, num2) {
 }
 
 function multiply(num1, num2) {
-  return num1 * num2;
+  return (num1 * num2).toFixed(1);
 }
 
 function divide(num1, num2) {
-  if (num2 != 0) return (num1 / num2).toFixed(3);
+  if (num2 != 0) {
+    return (num1 / num2).toFixed(1);
+  }
   return;
 }
 
