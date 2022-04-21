@@ -103,7 +103,11 @@ function multiply(num1, num2) {
 
 function divide(num1, num2) {
   if (num2 != 0) {
-    if (String(num1 / num2).includes(".")) return (num1 / num2).toFixed(3);
+    if (String(num1 / num2).includes(".")) {
+      outcome = Number((num1 / num2).toString());
+      if (String(outcome.length >= 10)) return outcome.toFixed(3);
+      return outcome;
+    }
 
     return num1 / num2;
   }

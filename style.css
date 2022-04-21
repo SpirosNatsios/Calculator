@@ -29,7 +29,6 @@ body {
   width: 450px;
   height: 150px;
   background-color: #008086;
-  margin-bottom: 30px;
   display: flex;
   align-items: center;
   padding-right: 15px;
@@ -42,7 +41,6 @@ body {
 .display > * {
   font-size: 70px;
   color: #ffffff;
-  width: fit-content;
 }
 
 .buttons {
@@ -66,14 +64,16 @@ body {
   width: 440px;
   height: 100px;
   display: flex;
-  margin-top: 25px;
+  margin-top: 15px;
   align-items: center;
   justify-content: space-around;
   background-color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .operator,
-#equal {
+#equal,
+#clear {
   background-color: #0ba4b3;
   color: #ffffff;
 }
@@ -92,10 +92,20 @@ button {
   color: #282726;
 }
 button:hover {
-  background-color: #9acdff;
+  cursor: pointer;
 }
 
 button:active {
   box-shadow: 0 1px #666;
   transform: translateY(4px);
+}
+
+#equal button:hover,
+#clear button:hover {
+  background-color: #9acdff;
+}
+
+img {
+  width: 50px;
+  height: 30px;
 }
