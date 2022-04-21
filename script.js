@@ -104,9 +104,11 @@ function multiply(num1, num2) {
 function divide(num1, num2) {
   if (num2 != 0) {
     if (String(num1 / num2).includes(".")) {
-      outcome = Number((num1 / num2).toString());
-      if (String(outcome.length >= 10)) return outcome.toFixed(3);
-      return outcome;
+      let outcome = num1 / num2;
+      if (String(outcome).length >= 10) {
+        return outcome.toFixed(3);
+      }
+      return outcome.toString();
     }
 
     return num1 / num2;
