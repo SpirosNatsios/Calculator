@@ -45,9 +45,8 @@ function equality() {
   num2 = display.textContent;
 
   display.textContent = operate(operator, +num1, +num2);
-  if (display.textContent.length >= 10) {
+  if (display.textContent.length > 10) {
     display.textContent = "Error";
-    console.log("test");
   }
   operation = true;
   isOperating = false;
