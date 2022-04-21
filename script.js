@@ -66,6 +66,7 @@ function clearScreen() {
 }
 
 backSpace.addEventListener("click", () => {
+  if (display.textContent == "Error") display.textContent = "0";
   let displayScreen = display.textContent;
   if (displayScreen == "0") return;
   display.textContent = displayScreen.slice(0, -1);
