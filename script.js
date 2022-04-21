@@ -2,7 +2,7 @@ let num1 = undefined;
 let operator = "";
 let operation = true;
 let isOperating = false;
-const display = document.querySelector(".display");
+const display = document.querySelector("p");
 const numButtons = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
 const equal = document.querySelector("#equal");
@@ -43,9 +43,6 @@ equal.addEventListener("click", () => {
 
 function equality() {
   num2 = display.textContent;
-  console.log(num1);
-  console.log(num2);
-  console.log(operator);
 
   display.textContent = operate(operator, +num1, +num2);
   if (display.textContent.length >= 10) {
@@ -100,14 +97,16 @@ function substract(num1, num2) {
 }
 
 function multiply(num1, num2) {
-  return (num1 * num2).toFixed(1);
+  if (String(num1 * num2).includes(".")) return (num1 * num2).toFixed(1);
+  return num1 * num2;
 }
 
 function divide(num1, num2) {
   if (num2 != 0) {
-    return (num1 / num2).toFixed(1);
+    if (String(num1 / num2).includes(".")) return (num1 / num2).toFixed(3);
+
+    return num1 / num2;
   }
-  return;
 }
 
 function operate(operator, num1, num2) {
